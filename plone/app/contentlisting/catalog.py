@@ -76,6 +76,7 @@ class CatalogContentListingObject(BaseContentListingObject):
     def getURL(self, relative=False):
         return self._brain.getURL(relative)
 
+    @property
     def uuid(self):
         # content objects might have UID and might not.
         if hasattr(aq_base(self._brain), 'UID'):
@@ -92,6 +93,7 @@ class CatalogContentListingObject(BaseContentListingObject):
     def getSize(self):
         return self._brain.getObjSize
 
+    @property
     def review_state(self):
         return self._brain.review_state
 
